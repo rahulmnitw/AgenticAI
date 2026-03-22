@@ -2,9 +2,10 @@ import 'dotenv/config';
 import { Agent, run, tool } from '@openai/agents';
 import { z } from 'zod';
 import fs from 'node:fs/promises'
-import { ref } from 'node:process';
 
 /*
+    Multi agent Design pattern (Agent as Manager)
+    Manager (agent as tools): A central agents that owns the conversation and invokes specialized agents that are exposed as tools.
     We are trying Agent as Manager which calls another agent for a task in this code snippet
     We made a sales agent that can handle sales but not refunds , but we do have a agent for refunds too that can handle the refunds
     So , we gave the refunds agent as a tool to the sales agent so that sales agent can invoke the refund agent if required.
