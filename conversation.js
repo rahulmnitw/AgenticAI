@@ -2,6 +2,13 @@ import 'dotenv/config'
 import { Agent, run, tool } from '@openai/agents'
 import { z } from 'zod'
 
+/**
+ * When we can run on an Agent , it calls the Agent just with that particular query 
+ * it doesnt remebers any previous detail , so to make sure the agent has the previous history .
+ * we make an array and give the agent output history to it everytime the main function is called 
+ * this way the agent doesn't gets the query but the sharedHistory array
+ */
+
 let sharedHistory = [];
 
 const sqlExecuteTool = tool({
