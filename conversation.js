@@ -53,6 +53,7 @@ async function main(q = '') {
     console.log(result.finalOutput);
 };
 
-main('Hi , My username is Rahul_Mishra');
-
-main('Fetch me all the comments that i made');
+main('Hi My name is Rahul Mishra').then(() => {
+    // TURN 2
+    main('Get me all the users with my name');
+});
